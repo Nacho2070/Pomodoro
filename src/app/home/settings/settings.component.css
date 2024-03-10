@@ -1,0 +1,60 @@
+.form-select{
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.select{
+  border: transparent;
+  
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: inherit;
+  cursor: pointer;
+  outline: none;
+  width: 40px;
+  height: 40px;
+}
+.sound-content{
+  display: inline-grid;
+  justify-items: end;
+}
+.form-control{
+  padding :5px;
+  display: inline-grid;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.content{
+  display: inline-flex;
+  flex-wrap: wrap;
+   
+  justify-content: flex-start;
+}
+.toggleAudio{
+  margin: auto;
+  
+}
+.toggleAudiobutton{
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 400;
+  border-radius: 3px;
+  padding: 12px 24px;
+  border: 0;
+  color: #3a4149;
+  background: #e7ebee;
+  line-height: 0.95;
+  font-size: 16px;
+  :hover {
+      transition: all .1s ease;
+      box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+      background-color: transparent;
+      color: rgb(0, 168, 252);
+  }
+
+}

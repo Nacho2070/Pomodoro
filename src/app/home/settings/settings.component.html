@@ -1,0 +1,77 @@
+<h2 mat-dialog-title>Title...</h2>
+
+<mat-dialog-content style="height: 500px; width: 250px; ">
+
+  <div [formGroup]="inputform" class="form-control">
+
+    <mat-form-field class="example-full-width">
+      <input type="number" formControlName="minutesControl" matInput padding="5px" placeholder="Minutes">
+    </mat-form-field>
+    <span *ngIf="minutesControl.errors?.['min']">Number must be tall than 0</span>
+    <span *ngIf="minutesControl.errors?.['max']">Number must be less than 60</span>
+    <mat-form-field class="example-full-width">
+      <input type="number" formControlName="minutesControlBreak" matInput padding="5px" placeholder="Break">
+    </mat-form-field>
+    <span *ngIf="minutesControlBreak.errors?.['min']">Number must be tall than 0</span>
+    <span *ngIf="minutesControlBreak.errors?.['max']">Number must be less than 60</span>
+    <mat-form-field class="example-full-width">
+      <input type="number" formControlName="minutesControlLongBreak" matInput padding="5px" placeholder="Long Break">
+    </mat-form-field>
+    <span *ngIf="minutesControlLongBreak.errors?.['min']">Number must be tall than 0</span>
+    <span *ngIf="minutesControlLongBreak.errors?.['max']">Number must be less than 60</span>
+
+  </div>
+  <br>
+  <p>Select the sound:</p>
+  <div class="content">
+    <mat-form-field>
+      <mat-label>Alarm Sound:</mat-label>
+      <select matNativeControl [(ngModel)]="selectedSound" (change)="previewAudio()" class="custom-select"
+        style="width:180px;">
+        <option>None</option>
+        <option value="1">Demo Audio 1</option>
+        <option value="2">Demo Audio </option>
+        <option value="3">Demo Audio 3</option>
+
+      </select>
+    </mat-form-field>
+     
+
+    <div *ngIf="playSound" class="toggleAudio">
+      <button (click)="toggleAudio()" class="toggleAudiobutton">
+        {{text}}
+      </button>
+    </div>
+
+
+    <mat-form-field>
+      <mat-label>Background sound:</mat-label>
+      <select matNativeControl [(ngModel)]="selectedBackgroundSound" (change)="previewBackgroundAudio()"
+        class="custom-select" style="width:180px;">
+        <option value="none">None</option>
+        <option value="1">Demo Audio 1</option>
+        <option value="2">Demo Audio </option>
+        <option value="3">Demo Audio 3</option>
+
+      </select>
+    </mat-form-field>
+
+    <div *ngIf="playBackground" class="toggleAudio">
+      <button (click)="toggleAudioBackground()" class="toggleAudiobutton">
+        {{text}}
+      </button>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="cancel()">Exit</button>
+    <button mat-button (click)="confirmChange()" [disabled]="inputform.invalid">Confirmar</button>
+  </div>
+</mat-dialog-content>
