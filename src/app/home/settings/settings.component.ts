@@ -107,7 +107,11 @@ toggleAudioBackground() {
 
   previewAudio() {
     this.playSound = true;
-
+    this.playBackground = false;
+    if (this.selectedSound === 'none') {
+      this.alarmAudio = '';
+      this.playSound = false;
+    }
     if (this.selectedSound === '1') {
       this.alarmAudio = 'assets/audio/Alarm_Clock.mp3';
     } else if (this.selectedSound === '2') {
@@ -123,6 +127,7 @@ toggleAudioBackground() {
   previewBackgroundAudio(){
     this.playSound= false;
     this.playBackground = true;
+
     if(this.selectedBackgroundSound === 'none'){
       this.audioBackground = '';
       this.playBackground = false;

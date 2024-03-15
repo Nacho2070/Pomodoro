@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Title...</h2>
+<h2 mat-dialog-title>Settings</h2>
 
 <mat-dialog-content style="height: 500px; width: 250px; ">
 
@@ -7,18 +7,18 @@
     <mat-form-field class="example-full-width">
       <input type="number" formControlName="minutesControl" matInput padding="5px" placeholder="Minutes">
     </mat-form-field>
-    <span *ngIf="minutesControl.errors?.['min']">Number must be greater than 0</span>
-    <span *ngIf="minutesControl.errors?.['max']">Number must be less than 60</span>
+    <mat-error *ngIf="minutesControl.errors?.['min']">Number must be greater than 0</mat-error>
+    <mat-error *ngIf="minutesControl.errors?.['max']">Number must be less than 60</mat-error>
     <mat-form-field class="example-full-width">
       <input type="number" formControlName="minutesControlBreak" matInput padding="5px" placeholder="Break">
     </mat-form-field>
-    <span *ngIf="minutesControlBreak.errors?.['min']">Number must be greater than 0</span>
-    <span *ngIf="minutesControlBreak.errors?.['max']">Number must be less than 60</span>
+    <mat-error *ngIf="minutesControlBreak.errors?.['min']">Number must be greater than 0</mat-error>
+    <mat-error *ngIf="minutesControlBreak.errors?.['max']">Number must be less than 60</mat-error>
     <mat-form-field class="example-full-width">
       <input type="number" formControlName="minutesControlLongBreak" matInput padding="5px" placeholder="Long Break">
     </mat-form-field>
-    <span *ngIf="minutesControlLongBreak.errors?.['min']">Number must be greater than 0</span>
-    <span *ngIf="minutesControlLongBreak.errors?.['max']">Number must be less than 60</span>
+    <mat-error *ngIf="minutesControlLongBreak.errors?.['min']">Number must be greater than 0</mat-error>
+    <mat-error *ngIf="minutesControlLongBreak.errors?.['max']">Number must be less than 60</mat-error>
 
   </div>
   <br>
@@ -30,19 +30,16 @@
         style="width:180px;">
         <option>None</option>
         <option value="1">Demo Audio 1</option>
-        <option value="2">Demo Audio </option>
-        <option value="3">Demo Audio 3</option>
-
+        <option value="2">Demo Audio 2</option>
+        <option value="3">Demo Audio 3</option> 
       </select>
     </mat-form-field>
      
-
     <div *ngIf="playSound" class="toggleAudio">
-      <button (click)="toggleAudio()" class="toggleAudiobutton">
+      <button (click)="toggleAudio()" style="padding-left:1px ;" mat-stroked-button color="primary">
         {{text}}
       </button>
     </div>
-
 
     <mat-form-field>
       <mat-label>Background sound:</mat-label>
@@ -57,7 +54,7 @@
     </mat-form-field>
 
     <div *ngIf="playBackground" class="toggleAudio">
-      <button (click)="toggleAudioBackground()" class="toggleAudiobutton">
+      <button (click)="toggleAudioBackground()" style="padding-left:1px ;" mat-stroked-button color="primary">
         {{text}}
       </button>
     </div>
