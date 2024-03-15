@@ -7,17 +7,17 @@
     <mat-form-field class="example-full-width">
       <input type="number" formControlName="minutesControl" matInput padding="5px" placeholder="Minutes">
     </mat-form-field>
-    <span *ngIf="minutesControl.errors?.['min']">Number must be tall than 0</span>
+    <span *ngIf="minutesControl.errors?.['min']">Number must be greater than 0</span>
     <span *ngIf="minutesControl.errors?.['max']">Number must be less than 60</span>
     <mat-form-field class="example-full-width">
       <input type="number" formControlName="minutesControlBreak" matInput padding="5px" placeholder="Break">
     </mat-form-field>
-    <span *ngIf="minutesControlBreak.errors?.['min']">Number must be tall than 0</span>
+    <span *ngIf="minutesControlBreak.errors?.['min']">Number must be greater than 0</span>
     <span *ngIf="minutesControlBreak.errors?.['max']">Number must be less than 60</span>
     <mat-form-field class="example-full-width">
       <input type="number" formControlName="minutesControlLongBreak" matInput padding="5px" placeholder="Long Break">
     </mat-form-field>
-    <span *ngIf="minutesControlLongBreak.errors?.['min']">Number must be tall than 0</span>
+    <span *ngIf="minutesControlLongBreak.errors?.['min']">Number must be greater than 0</span>
     <span *ngIf="minutesControlLongBreak.errors?.['max']">Number must be less than 60</span>
 
   </div>
@@ -71,7 +71,7 @@
 
 
   <div mat-dialog-actions>
-    <button mat-button (click)="cancel()">Exit</button>
-    <button mat-button (click)="confirmChange()" [disabled]="inputform.invalid">Confirmar</button>
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-button (click)="confirmChange()" [disabled]="inputform.invalid">Confirm</button>
   </div>
 </mat-dialog-content>

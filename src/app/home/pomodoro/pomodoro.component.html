@@ -1,6 +1,7 @@
 <mat-card style=" border-radius: 0%; margin: auto; display: flex; ;flex-direction: column;">
-  <h1>{{type}}</h1>
-  <mat-card class="pomodoro" >
+  
+  <div class="display-timer"> Timer selected : <h1>{{type}}</h1></div> 
+  <mat-card  class="pomodoro">
   
     <button (click)="selectedTimer = 'pomodoroTimer'; chooseOption()" mat-button color="primary">Pomodoro</button>
     <button (click)="selectedTimer = 'breakTimer'; chooseOption()" mat-button color="primary">Short Break</button>
@@ -28,12 +29,12 @@
    <mat-icon>settings</mat-icon>
   </button>
   <br>
-  <div class="info">
+ <mat-card class="info">
    <h3>What is a Pomodoro?</h3>
    <p>The Pomodoro Technique is a time management method developed by Francesco Cirillo in the 1980s. The technique uses a timer to break work into intervals of time, called "pomodoros" (Italian for tomatoes). Each pomodoro typically lasts for 25 minutes, followed by a short break. After completing four pomodoros, a longer break is taken.</p>
    <h4>Why do you need use a pomodoro?</h4>
    <p>The Pomodoro Technique is based on the premise that working in focused time blocks followed by regular breaks can enhance concentration and efficiency. It also promotes increased awareness of time and helps prevent procrastination</p>
   
-  </div>
+  </mat-card>
 
 </mat-card>

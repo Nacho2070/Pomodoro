@@ -1,8 +1,7 @@
-import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { FormBuilder,Validators } from '@angular/forms';
 import {MatDialogRef} from '@angular/material/dialog';
 import { valuesSettings } from 'src/app/services/DataService/ValuesConfig';
-
 import { DataService } from 'src/app/services/DataService/data-service.service';
 
 
@@ -11,8 +10,6 @@ import { DataService } from 'src/app/services/DataService/data-service.service';
   selector: 'app-modal',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css']
-
-
 })
  
 export class SettingsComponent implements OnInit {
@@ -21,7 +18,6 @@ export class SettingsComponent implements OnInit {
     public dialogRef: MatDialogRef<SettingsComponent>,
     public formcontrol : FormBuilder,
     public _dataService: DataService
-    
     ){}
     
     $values:valuesSettings = {
@@ -44,13 +40,12 @@ export class SettingsComponent implements OnInit {
   playBackground:boolean = false;
 
   ngOnInit() {
-    this._dataService.minutesValue.subscribe(data => {
+    this._dataService.updatedValues.subscribe(data => {
       this.$values = data
     });
     this.inputform.get('minutesControl')?.setValue(this.$values.timePomodoro);
     this.inputform.get('minutesControlBreak')?.setValue(this.$values.timeBreak);
     this.inputform.get('minutesControlLongBreak')?.setValue(this.$values.timeLongBreak);
-    
 }
   
   inputform = this.formcontrol.group({
@@ -80,7 +75,6 @@ export class SettingsComponent implements OnInit {
         };
       }
   
-  
     if (this.audio.paused) {
       this.audio.play();
       this.text = 'Pause';
@@ -88,8 +82,6 @@ export class SettingsComponent implements OnInit {
       this.audio.pause();
       this.text = 'Play';
     }
-     
-
   }
 
 }
@@ -103,8 +95,6 @@ toggleAudioBackground() {
         this.text = 'Play';
       };
     }
-
-
   if (this.toggleaudioBackground.paused) {
     this.toggleaudioBackground.play();
     this.text = 'Pause';
@@ -112,21 +102,18 @@ toggleAudioBackground() {
     this.toggleaudioBackground.pause();
     this.text = 'Play';
   }
-   
-
 }
-
 }  
+
   previewAudio() {
     this.playSound = true;
 
     if (this.selectedSound === '1') {
-      this.alarmAudio = 'assets/audio/test.mp3';
-     
+      this.alarmAudio = 'assets/audio/Alarm_Clock.mp3';
     } else if (this.selectedSound === '2') {
-      
+      //The other audios
     } else if (this.selectedSound === '3') {
-      //this. alarmAudio = 'assets/audio/test-3.mp3';
+      //The other audios
     } else {
     this.alarmAudio = '';
     this.playSound = false;
@@ -141,27 +128,22 @@ toggleAudioBackground() {
       this.playBackground = false;
     }
     if (this.selectedBackgroundSound === '1') {
-      this.audioBackground = 'assets/audio/birdsSound.mp3';
+      this.audioBackground = 'assets/audio/Birds_Sound.mp3';
     } else if (this.selectedBackgroundSound === '2') {
-      //this. alarmAudio = 'assets/audio/test-2.mp3';
+      //The other audios
     } else if (this.selectedBackgroundSound === '3') {
-      //this. alarmAudio = 'assets/audio/test-3.mp3';
+     //The other audios
     } 
   }
-
-  
 
   cancel() {
     this.dialogRef.close();
   };
 
   confirmChange(){
-
-
     this.setValues();
-    console.log(this._dataService.dataSubjectData = this.$values)
-   
-   this.dialogRef.close();
+    this._dataService.dataSubjectData = this.$values;
+    this.dialogRef.close();
   }
 
 
@@ -174,4 +156,5 @@ setValues(){
   this.audio?.pause();
   this.toggleaudioBackground?.pause();
 }
+
 }

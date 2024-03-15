@@ -15,7 +15,7 @@ export class DataService {
       audio: '',
       audioBackground: '',
     });
-  get minutesValue() {
+  get updatedValues() {
     return this.dataSubject.asObservable();
   }
   set dataSubjectData(data: valuesSettings) {

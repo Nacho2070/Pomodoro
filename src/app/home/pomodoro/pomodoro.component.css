@@ -1,4 +1,13 @@
-
+.display-timer{
+  display: flex; 
+  justify-content:space-between;
+  font-size: medium;
+  font-weight: 500;
+}
+.display-timer h1{
+  font-size: medium;
+  font-weight: 500;
+}
 .pomodoro {
   display: grid;
   grid-template-rows: 100px 100px 100px;
@@ -12,13 +21,8 @@
   
 }
 
-h1 {
-  font-size: medium;
-  position: relative;
-  text-align: right;
-  
 
-}
+
 
 .pomodoroTypes {
   margin: 5px;
@@ -37,7 +41,6 @@ button {
 }
 
 .timer {
-
   padding: 5px;
   font-size: 3.0rem;
   grid-row-start: 2;
@@ -57,10 +60,7 @@ button {
 }
 
 .settingsButton {
-
   margin-bottom: 70px;
-  
-
 }
 
 button{
@@ -68,15 +68,11 @@ button{
   margin:5px 5px;
 
 }
-button::after{
-  border-color:cadetblue ;
-} 
 .info{
   margin: 5px;
   padding: 5px;
   text-align: center;
-  border-style: solid;
-  border-color: red;
+  
   border-width: 1px;
   border-radius: 4px;
 } 

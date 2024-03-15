@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Inject, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { interval, Observable, Subscription } from 'rxjs';
+import { Component,OnDestroy, OnInit} from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 
 import { SettingsComponent } from '../settings/settings.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
@@ -61,7 +61,7 @@ export class PomodoroComponent implements OnDestroy, OnInit {
       this.s = 0;
     }
 
-    this._dataService.minutesValue.subscribe( ({timePomodoro,timeBreak,timeLongBreak, audio, audioBackground }) =>{
+    this._dataService.updatedValues.subscribe( ({timePomodoro,timeBreak,timeLongBreak, audio, audioBackground }) =>{
 
       this.values$.timePomodoro= timePomodoro;
       this.values$.timeBreak = timeBreak;

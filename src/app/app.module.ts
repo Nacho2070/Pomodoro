@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './home/header/header.component';
-import { FooterComponent } from './home/footer/footer.component';
+
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule } from '@angular/common/http';
 import { PomodoroComponent } from './home/pomodoro/pomodoro.component';
@@ -19,14 +19,11 @@ import { MaterialModule  } from './modules/material/material.module';
     declarations: [
         AppComponent,
         HeaderComponent,
-        FooterComponent,
         PomodoroComponent,
         SettingsComponent,
         ThemeSwitcherComponent,
     ],
-    providers: [],
-        
-    
+    providers: [],    
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
@@ -34,7 +31,6 @@ import { MaterialModule  } from './modules/material/material.module';
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        
         MaterialModule
         
     ]
