@@ -18,13 +18,20 @@
   align-content: center;
   justify-content: center;
   width: 450px;
-  margin: auto;
-  
+  margin-left: auto;
+  margin-right: auto;  
+  margin-top: 150px;
 }
-
-
-
-
+.selectPomodoroBtn{  
+   grid-row-start: 1;
+   grid-column-start: 1;
+   grid-row-end: 2;
+   grid-column-end: 4;
+   width: fit-content;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
 .pomodoroTypes {
   margin: 5px;
   padding: 5px;
@@ -70,15 +77,20 @@ button{
 
 }
 .info{
-  margin: 5px;
-  padding: 5px;
-  text-align: center;
+  width: fit-content;  
+  margin-top: 20px;
+  padding: 20px;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+}
+.info div{
+  width: 50%;
   
-  border-width: 1px;
-  border-radius: 4px;
 } 
 
-.info h3,h4{
-  padding-top: 2xp;
-
+.info h3{
+  font-size: larger;
+  margin-top: 2px;  
+  border-radius: 0%;
 }

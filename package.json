@@ -6,8 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "deploy": "ng build --prod --base-href=/Pomodoro/demo"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
     "@stomp/stompjs": "^7.0.0",
+    "angular-cli-ghpages": "^2.0.1",
     "bootstrap": "^5.3.2",
     "pomodoro": "file:",
     "rxjs": "~7.5.0",
